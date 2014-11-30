@@ -18,24 +18,24 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_EditRefInDb_t {
+struct qt_meta_stringdata_EditRefInDB_t {
     QByteArrayData data[1];
     char stringdata[12];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_EditRefInDb_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_EditRefInDB_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_EditRefInDb_t qt_meta_stringdata_EditRefInDb = {
+static const qt_meta_stringdata_EditRefInDB_t qt_meta_stringdata_EditRefInDB = {
     {
 QT_MOC_LITERAL(0, 0, 11)
     },
-    "EditRefInDb"
+    "EditRefInDB"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_EditRefInDb[] = {
+static const uint qt_meta_data_EditRefInDB[] = {
 
  // content:
        7,       // revision
@@ -51,7 +51,7 @@ static const uint qt_meta_data_EditRefInDb[] = {
        0        // eod
 };
 
-void EditRefInDb::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void EditRefInDB::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -59,26 +59,26 @@ void EditRefInDb::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     Q_UNUSED(_a);
 }
 
-const QMetaObject EditRefInDb::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_EditRefInDb.data,
-      qt_meta_data_EditRefInDb,  qt_static_metacall, 0, 0}
+const QMetaObject EditRefInDB::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_EditRefInDB.data,
+      qt_meta_data_EditRefInDB,  qt_static_metacall, 0, 0}
 };
 
 
-const QMetaObject *EditRefInDb::metaObject() const
+const QMetaObject *EditRefInDB::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *EditRefInDb::qt_metacast(const char *_clname)
+void *EditRefInDB::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_EditRefInDb.stringdata))
-        return static_cast<void*>(const_cast< EditRefInDb*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_EditRefInDB.stringdata))
+        return static_cast<void*>(const_cast< EditRefInDB*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int EditRefInDb::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int EditRefInDB::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

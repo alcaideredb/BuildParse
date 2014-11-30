@@ -18,30 +18,30 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_EditRefInDb
+class Ui_EditRefInDB
 {
 public:
 
-    void setupUi(QDialog *EditRefInDb)
+    void setupUi(QDialog *EditRefInDB)
     {
-        if (EditRefInDb->objectName().isEmpty())
-            EditRefInDb->setObjectName(QStringLiteral("EditRefInDb"));
-        EditRefInDb->resize(773, 468);
+        if (EditRefInDB->objectName().isEmpty())
+            EditRefInDB->setObjectName(QStringLiteral("EditRefInDB"));
+        EditRefInDB->resize(771, 462);
 
-        retranslateUi(EditRefInDb);
+        retranslateUi(EditRefInDB);
 
-        QMetaObject::connectSlotsByName(EditRefInDb);
+        QMetaObject::connectSlotsByName(EditRefInDB);
     } // setupUi
 
-    void retranslateUi(QDialog *EditRefInDb)
+    void retranslateUi(QDialog *EditRefInDB)
     {
-        EditRefInDb->setWindowTitle(QApplication::translate("EditRefInDb", "Dialog", 0));
+        EditRefInDB->setWindowTitle(QApplication::translate("EditRefInDB", "Edit References", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class EditRefInDb: public Ui_EditRefInDb {};
+    class EditRefInDB: public Ui_EditRefInDB {};
 } // namespace Ui
 
 QT_END_NAMESPACE
