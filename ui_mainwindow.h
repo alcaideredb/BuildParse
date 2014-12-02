@@ -32,13 +32,14 @@ public:
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_2;
     QToolButton *toolButton_2;
-    QToolButton *toolButton;
-    QSpacerItem *horizontalSpacer;
     QToolButton *toolButton_3;
     QToolButton *toolButton_4;
+    QSpacerItem *horizontalSpacer_3;
+    QToolButton *toolButton;
+    QSpacerItem *horizontalSpacer;
+    QToolButton *toolButton_5;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -58,10 +59,6 @@ public:
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_3, 0, 2, 1, 1);
-
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
@@ -70,6 +67,20 @@ public:
         toolButton_2->setObjectName(QStringLiteral("toolButton_2"));
 
         gridLayout->addWidget(toolButton_2, 0, 3, 1, 1);
+
+        toolButton_3 = new QToolButton(centralWidget);
+        toolButton_3->setObjectName(QStringLiteral("toolButton_3"));
+
+        gridLayout->addWidget(toolButton_3, 2, 1, 1, 1);
+
+        toolButton_4 = new QToolButton(centralWidget);
+        toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
+
+        gridLayout->addWidget(toolButton_4, 2, 3, 1, 1);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_3, 0, 2, 1, 1);
 
         toolButton = new QToolButton(centralWidget);
         toolButton->setObjectName(QStringLiteral("toolButton"));
@@ -80,15 +91,10 @@ public:
 
         gridLayout->addItem(horizontalSpacer, 0, 4, 1, 1);
 
-        toolButton_3 = new QToolButton(centralWidget);
-        toolButton_3->setObjectName(QStringLiteral("toolButton_3"));
+        toolButton_5 = new QToolButton(centralWidget);
+        toolButton_5->setObjectName(QStringLiteral("toolButton_5"));
 
-        gridLayout->addWidget(toolButton_3, 1, 1, 1, 1);
-
-        toolButton_4 = new QToolButton(centralWidget);
-        toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
-
-        gridLayout->addWidget(toolButton_4, 1, 3, 1, 1);
+        gridLayout->addWidget(toolButton_5, 1, 2, 1, 1);
 
 
         horizontalLayout->addLayout(gridLayout);
@@ -114,9 +120,10 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Welcome to the Citation Parsing Tool", 0));
         toolButton_2->setText(QApplication::translate("MainWindow", "...", 0));
-        toolButton->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton_3->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton_4->setText(QApplication::translate("MainWindow", "...", 0));
+        toolButton->setText(QApplication::translate("MainWindow", "...", 0));
+        toolButton_5->setText(QApplication::translate("MainWindow", "...", 0));
         mainToolBar->setWindowTitle(QApplication::translate("MainWindow", "Citation Parsing Tool", 0));
     } // retranslateUi
 
