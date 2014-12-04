@@ -43,6 +43,7 @@ public:
     QToolButton *toolButton_5;
     QToolButton *toolButton_4;
     QToolButton *toolButton_6;
+    QToolButton *toolButton_7;
     QTableView *tableView_3;
 
     void setupUi(QDialog *Journal)
@@ -121,6 +122,11 @@ public:
 
         verticalLayout_2->addWidget(toolButton_6);
 
+        toolButton_7 = new QToolButton(Journal);
+        toolButton_7->setObjectName(QStringLiteral("toolButton_7"));
+
+        verticalLayout_2->addWidget(toolButton_7);
+
 
         gridLayout_2->addLayout(verticalLayout_2, 0, 2, 1, 1);
 
@@ -148,6 +154,7 @@ public:
         toolButton_5->setText(QApplication::translate("Journal", "Add Volume", 0));
         toolButton_4->setText(QApplication::translate("Journal", "Delete Volume", 0));
         toolButton_6->setText(QApplication::translate("Journal", "Add Issue", 0));
+        toolButton_7->setText(QApplication::translate("Journal", "Delete Issue", 0));
     } // retranslateUi
 
 };

@@ -55,7 +55,8 @@ SOURCES       = ../Untitled\ Folder/citParse/main.cpp \
 		../Untitled\ Folder/citParse/editrefindb.cpp \
 		../Untitled\ Folder/citParse/journal.cpp \
 		../Untitled\ Folder/citParse/addjournal.cpp \
-		../Untitled\ Folder/citParse/addvolume.cpp qrc_MyResources.cpp \
+		../Untitled\ Folder/citParse/addvolume.cpp \
+		../Untitled\ Folder/citParse/addissue.cpp qrc_MyResources.cpp \
 		moc_mainwindow.cpp \
 		moc_classwizard.cpp \
 		moc_editparsedreferences.cpp \
@@ -65,7 +66,8 @@ SOURCES       = ../Untitled\ Folder/citParse/main.cpp \
 		moc_editrefindb.cpp \
 		moc_journal.cpp \
 		moc_addjournal.cpp \
-		moc_addvolume.cpp
+		moc_addvolume.cpp \
+		moc_addissue.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		classwizard.o \
@@ -77,6 +79,7 @@ OBJECTS       = main.o \
 		journal.o \
 		addjournal.o \
 		addvolume.o \
+		addissue.o \
 		qrc_MyResources.o \
 		moc_mainwindow.o \
 		moc_classwizard.o \
@@ -87,7 +90,8 @@ OBJECTS       = main.o \
 		moc_editrefindb.o \
 		moc_journal.o \
 		moc_addjournal.o \
-		moc_addvolume.o
+		moc_addvolume.o \
+		moc_addissue.o
 DIST          = ../Qt5.3.1/5.3/gcc_64/mkspecs/features/spec_pre.prf \
 		../Qt5.3.1/5.3/gcc_64/mkspecs/common/shell-unix.conf \
 		../Qt5.3.1/5.3/gcc_64/mkspecs/common/unix.conf \
@@ -205,7 +209,8 @@ DIST          = ../Qt5.3.1/5.3/gcc_64/mkspecs/features/spec_pre.prf \
 		../Untitled\ Folder/citParse/editrefindb.cpp \
 		../Untitled\ Folder/citParse/journal.cpp \
 		../Untitled\ Folder/citParse/addjournal.cpp \
-		../Untitled\ Folder/citParse/addvolume.cpp
+		../Untitled\ Folder/citParse/addvolume.cpp \
+		../Untitled\ Folder/citParse/addissue.cpp
 QMAKE_TARGET  = citParse
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = citParse
@@ -235,7 +240,7 @@ first: all
 
 all: Makefile $(TARGET)
 
-$(TARGET): ui_mainwindow.h ui_editparsedreferences.h ui_viewparsedreferences.h ui_deleteparsedreferences.h ui_editreference.h ui_editrefindb.h ui_journal.h ui_addjournal.h ui_addvolume.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_editparsedreferences.h ui_viewparsedreferences.h ui_deleteparsedreferences.h ui_editreference.h ui_editrefindb.h ui_journal.h ui_addjournal.h ui_addvolume.h ui_addissue.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Untitled\ Folder/citParse/citParse.pro ../../Qt5.3.1/5.3/gcc_64/mkspecs/features/spec_pre.prf \
@@ -472,7 +477,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/citParse1.0.0 || mkdir -p .tmp/citParse1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/MyResources.qrc .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/mainwindow.h ../Untitled Folder/citParse/classwizard.h ../Untitled Folder/citParse/editparsedreferences.h ../Untitled Folder/citParse/viewparsedreferences.h ../Untitled Folder/citParse/deleteparsedreferences.h ../Untitled Folder/citParse/editreference.h ../Untitled Folder/citParse/editrefindb.h ../Untitled Folder/citParse/journal.h ../Untitled Folder/citParse/addjournal.h ../Untitled Folder/citParse/addvolume.h .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/main.cpp ../Untitled Folder/citParse/mainwindow.cpp ../Untitled Folder/citParse/classwizard.cpp ../Untitled Folder/citParse/editparsedreferences.cpp ../Untitled Folder/citParse/viewparsedreferences.cpp ../Untitled Folder/citParse/deleteparsedreferences.cpp ../Untitled Folder/citParse/editreference.cpp ../Untitled Folder/citParse/editrefindb.cpp ../Untitled Folder/citParse/journal.cpp ../Untitled Folder/citParse/addjournal.cpp ../Untitled Folder/citParse/addvolume.cpp .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/mainwindow.ui ../Untitled Folder/citParse/editparsedreferences.ui ../Untitled Folder/citParse/viewparsedreferences.ui ../Untitled Folder/citParse/deleteparsedreferences.ui ../Untitled Folder/citParse/editreference.ui ../Untitled Folder/citParse/editrefindb.ui ../Untitled Folder/citParse/journal.ui ../Untitled Folder/citParse/addjournal.ui ../Untitled Folder/citParse/addvolume.ui .tmp/citParse1.0.0/ && (cd `dirname .tmp/citParse1.0.0` && $(TAR) citParse1.0.0.tar citParse1.0.0 && $(COMPRESS) citParse1.0.0.tar) && $(MOVE) `dirname .tmp/citParse1.0.0`/citParse1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/citParse1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/MyResources.qrc .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/mainwindow.h ../Untitled Folder/citParse/classwizard.h ../Untitled Folder/citParse/editparsedreferences.h ../Untitled Folder/citParse/viewparsedreferences.h ../Untitled Folder/citParse/deleteparsedreferences.h ../Untitled Folder/citParse/editreference.h ../Untitled Folder/citParse/editrefindb.h ../Untitled Folder/citParse/journal.h ../Untitled Folder/citParse/addjournal.h ../Untitled Folder/citParse/addvolume.h ../Untitled Folder/citParse/addissue.h .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/main.cpp ../Untitled Folder/citParse/mainwindow.cpp ../Untitled Folder/citParse/classwizard.cpp ../Untitled Folder/citParse/editparsedreferences.cpp ../Untitled Folder/citParse/viewparsedreferences.cpp ../Untitled Folder/citParse/deleteparsedreferences.cpp ../Untitled Folder/citParse/editreference.cpp ../Untitled Folder/citParse/editrefindb.cpp ../Untitled Folder/citParse/journal.cpp ../Untitled Folder/citParse/addjournal.cpp ../Untitled Folder/citParse/addvolume.cpp ../Untitled Folder/citParse/addissue.cpp .tmp/citParse1.0.0/ && $(COPY_FILE) --parents ../Untitled Folder/citParse/mainwindow.ui ../Untitled Folder/citParse/editparsedreferences.ui ../Untitled Folder/citParse/viewparsedreferences.ui ../Untitled Folder/citParse/deleteparsedreferences.ui ../Untitled Folder/citParse/editreference.ui ../Untitled Folder/citParse/editrefindb.ui ../Untitled Folder/citParse/journal.ui ../Untitled Folder/citParse/addjournal.ui ../Untitled Folder/citParse/addvolume.ui ../Untitled Folder/citParse/addissue.ui .tmp/citParse1.0.0/ && (cd `dirname .tmp/citParse1.0.0` && $(TAR) citParse1.0.0.tar citParse1.0.0 && $(COMPRESS) citParse1.0.0.tar) && $(MOVE) `dirname .tmp/citParse1.0.0`/citParse1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/citParse1.0.0
 
 
 clean:compiler_clean 
@@ -499,9 +504,9 @@ compiler_rcc_clean:
 qrc_MyResources.cpp: ../Untitled\ Folder/citParse/MyResources.qrc
 	/home/oathkeeper/Qt5.3.1/5.3/gcc_64/bin/rcc -name MyResources ../Untitled\ Folder/citParse/MyResources.qrc -o qrc_MyResources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_classwizard.cpp moc_editparsedreferences.cpp moc_viewparsedreferences.cpp moc_deleteparsedreferences.cpp moc_editreference.cpp moc_editrefindb.cpp moc_journal.cpp moc_addjournal.cpp moc_addvolume.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_classwizard.cpp moc_editparsedreferences.cpp moc_viewparsedreferences.cpp moc_deleteparsedreferences.cpp moc_editreference.cpp moc_editrefindb.cpp moc_journal.cpp moc_addjournal.cpp moc_addvolume.cpp moc_addissue.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_classwizard.cpp moc_editparsedreferences.cpp moc_viewparsedreferences.cpp moc_deleteparsedreferences.cpp moc_editreference.cpp moc_editrefindb.cpp moc_journal.cpp moc_addjournal.cpp moc_addvolume.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_classwizard.cpp moc_editparsedreferences.cpp moc_viewparsedreferences.cpp moc_deleteparsedreferences.cpp moc_editreference.cpp moc_editrefindb.cpp moc_journal.cpp moc_addjournal.cpp moc_addvolume.cpp moc_addissue.cpp
 moc_mainwindow.cpp: ../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qwidget.h \
@@ -1573,11 +1578,115 @@ moc_addvolume.cpp: ../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QDialog \
 		../Untitled\ Folder/citParse/addvolume.h
 	/home/oathkeeper/Qt5.3.1/5.3/gcc_64/bin/moc $(DEFINES) -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/mkspecs/linux-g++ -I'/home/oathkeeper/Desktop/Untitled Folder/citParse' -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtWidgets -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtSql -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtGui -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtCore -I. ../Untitled\ Folder/citParse/addvolume.h -o moc_addvolume.cpp
 
+moc_addissue.cpp: ../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QDialog \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qdialog.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qwidget.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qglobal.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qconfig.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfeatures.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qtypetraits.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qlogging.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qflags.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_mips.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_x86.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_unix.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmutex.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobject.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstring.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qchar.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qlist.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qiterator.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qisenum.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmargins.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qrect.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsize.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qpoint.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpalette.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qcolor.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qrgb.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qdatastream.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qiodevice.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qpair.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qregexp.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qbrush.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qvector.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qmatrix.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpolygon.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qregion.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qline.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qtransform.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpainterpath.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qimage.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpixmap.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qhash.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qfont.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qfontinfo.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qcursor.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qkeysequence.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qevent.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qvariant.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmap.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qdebug.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qlocale.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qset.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qurl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qurlquery.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfile.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfiledevice.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qvector2d.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qtouchdevice.h \
+		../Untitled\ Folder/citParse/addissue.h
+	/home/oathkeeper/Qt5.3.1/5.3/gcc_64/bin/moc $(DEFINES) -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/mkspecs/linux-g++ -I'/home/oathkeeper/Desktop/Untitled Folder/citParse' -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtWidgets -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtSql -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtGui -I/home/oathkeeper/Qt5.3.1/5.3/gcc_64/include/QtCore -I. ../Untitled\ Folder/citParse/addissue.h -o moc_addissue.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_editparsedreferences.h ui_viewparsedreferences.h ui_deleteparsedreferences.h ui_editreference.h ui_editrefindb.h ui_journal.h ui_addjournal.h ui_addvolume.h
+compiler_uic_make_all: ui_mainwindow.h ui_editparsedreferences.h ui_viewparsedreferences.h ui_deleteparsedreferences.h ui_editreference.h ui_editrefindb.h ui_journal.h ui_addjournal.h ui_addvolume.h ui_addissue.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_editparsedreferences.h ui_viewparsedreferences.h ui_deleteparsedreferences.h ui_editreference.h ui_editrefindb.h ui_journal.h ui_addjournal.h ui_addvolume.h
+	-$(DEL_FILE) ui_mainwindow.h ui_editparsedreferences.h ui_viewparsedreferences.h ui_deleteparsedreferences.h ui_editreference.h ui_editrefindb.h ui_journal.h ui_addjournal.h ui_addvolume.h ui_addissue.h
 ui_mainwindow.h: ../Untitled\ Folder/citParse/mainwindow.ui
 	/home/oathkeeper/Qt5.3.1/5.3/gcc_64/bin/uic ../Untitled\ Folder/citParse/mainwindow.ui -o ui_mainwindow.h
 
@@ -1604,6 +1713,9 @@ ui_addjournal.h: ../Untitled\ Folder/citParse/addjournal.ui
 
 ui_addvolume.h: ../Untitled\ Folder/citParse/addvolume.ui
 	/home/oathkeeper/Qt5.3.1/5.3/gcc_64/bin/uic ../Untitled\ Folder/citParse/addvolume.ui -o ui_addvolume.h
+
+ui_addissue.h: ../Untitled\ Folder/citParse/addissue.ui
+	/home/oathkeeper/Qt5.3.1/5.3/gcc_64/bin/uic ../Untitled\ Folder/citParse/addissue.ui -o ui_addissue.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -2989,7 +3101,8 @@ journal.o: ../Untitled\ Folder/citParse/journal.cpp ../Untitled\ Folder/citParse
 		../Untitled\ Folder/citParse/addjournal.h \
 		../../Qt5.3.1/5.3/gcc_64/include/QtCore/QDebug \
 		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QMessageBox \
-		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qmessagebox.h
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qmessagebox.h \
+		../Untitled\ Folder/citParse/addvolume.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o journal.o ../Untitled\ Folder/citParse/journal.cpp
 
 addjournal.o: ../Untitled\ Folder/citParse/addjournal.cpp ../Untitled\ Folder/citParse/addjournal.h \
@@ -3251,8 +3364,161 @@ addvolume.o: ../Untitled\ Folder/citParse/addvolume.cpp ../Untitled\ Folder/citP
 		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfiledevice.h \
 		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qvector2d.h \
 		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_addvolume.h
+		ui_addvolume.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/QVariant \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QAction \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qaction.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qicon.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QApplication \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qapplication.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qguiapplication.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QButtonGroup \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QDialogButtonBox \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QGridLayout \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QHeaderView \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qheaderview.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qvalidator.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qregularexpression.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qslider.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qstyle.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QLabel \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qlabel.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QSpinBox \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qspinbox.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/QDebug \
+		../../Qt5.3.1/5.3/gcc_64/include/QtSql/QSqlQuery \
+		../../Qt5.3.1/5.3/gcc_64/include/QtSql/qsqlquery.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtSql/qsql.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtSql/qsqldatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addvolume.o ../Untitled\ Folder/citParse/addvolume.cpp
+
+addissue.o: ../Untitled\ Folder/citParse/addissue.cpp ../Untitled\ Folder/citParse/addissue.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/QDialog \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qdialog.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qwidget.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qglobal.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qconfig.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfeatures.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qtypetraits.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qlogging.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qflags.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_mips.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_x86.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qatomic_unix.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmutex.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobject.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstring.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qchar.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qlist.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qiterator.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qisenum.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmargins.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qrect.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsize.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qpoint.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpalette.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qcolor.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qrgb.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qdatastream.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qiodevice.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qpair.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qregexp.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qbrush.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qvector.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qmatrix.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpolygon.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qregion.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qline.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qtransform.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpainterpath.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qimage.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qpixmap.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qhash.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qfont.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qfontinfo.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qcursor.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qkeysequence.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qevent.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qvariant.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qmap.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qdebug.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qlocale.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qset.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qurl.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qurlquery.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfile.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtCore/qfiledevice.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qvector2d.h \
+		../../Qt5.3.1/5.3/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_addissue.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addissue.o ../Untitled\ Folder/citParse/addissue.cpp
 
 qrc_MyResources.o: qrc_MyResources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_MyResources.o qrc_MyResources.cpp
@@ -3286,6 +3552,9 @@ moc_addjournal.o: moc_addjournal.cpp
 
 moc_addvolume.o: moc_addvolume.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addvolume.o moc_addvolume.cpp
+
+moc_addissue.o: moc_addissue.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addissue.o moc_addissue.cpp
 
 ####### Install
 

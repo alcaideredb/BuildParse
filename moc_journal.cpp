@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Journal_t {
-    QByteArrayData data[12];
-    char stringdata[226];
+    QByteArrayData data[14];
+    char stringdata[274];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,14 +40,17 @@ QT_MOC_LITERAL(7, 105, 24),
 QT_MOC_LITERAL(8, 130, 22),
 QT_MOC_LITERAL(9, 153, 24),
 QT_MOC_LITERAL(10, 178, 23),
-QT_MOC_LITERAL(11, 202, 23)
+QT_MOC_LITERAL(11, 202, 23),
+QT_MOC_LITERAL(12, 226, 23),
+QT_MOC_LITERAL(13, 250, 23)
     },
     "Journal\0on_toolButton_clicked\0\0"
     "on_toolButton_3_clicked\0on_tableView_clicked\0"
     "index\0on_tableView_activated\0"
     "on_tableView_2_activated\0"
     "on_tableView_3_clicked\0on_tableView_3_activated\0"
-    "on_toolButton_5_clicked\0on_toolButton_6_clicked"
+    "on_toolButton_5_clicked\0on_toolButton_6_clicked\0"
+    "on_toolButton_7_clicked\0on_toolButton_4_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,7 +60,7 @@ static const uint qt_meta_data_Journal[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -65,15 +68,17 @@ static const uint qt_meta_data_Journal[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x08 /* Private */,
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    1,   61,    2, 0x08 /* Private */,
-       6,    1,   64,    2, 0x08 /* Private */,
-       7,    1,   67,    2, 0x08 /* Private */,
-       8,    1,   70,    2, 0x08 /* Private */,
-       9,    1,   73,    2, 0x08 /* Private */,
-      10,    0,   76,    2, 0x08 /* Private */,
-      11,    0,   77,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x08 /* Private */,
+       3,    0,   70,    2, 0x08 /* Private */,
+       4,    1,   71,    2, 0x08 /* Private */,
+       6,    1,   74,    2, 0x08 /* Private */,
+       7,    1,   77,    2, 0x08 /* Private */,
+       8,    1,   80,    2, 0x08 /* Private */,
+       9,    1,   83,    2, 0x08 /* Private */,
+      10,    0,   86,    2, 0x08 /* Private */,
+      11,    0,   87,    2, 0x08 /* Private */,
+      12,    0,   88,    2, 0x08 /* Private */,
+      13,    0,   89,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -83,6 +88,8 @@ static const uint qt_meta_data_Journal[] = {
     QMetaType::Void, QMetaType::QModelIndex,    5,
     QMetaType::Void, QMetaType::QModelIndex,    5,
     QMetaType::Void, QMetaType::QModelIndex,    5,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -103,6 +110,8 @@ void Journal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 6: _t->on_tableView_3_activated((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         case 7: _t->on_toolButton_5_clicked(); break;
         case 8: _t->on_toolButton_6_clicked(); break;
+        case 9: _t->on_toolButton_7_clicked(); break;
+        case 10: _t->on_toolButton_4_clicked(); break;
         default: ;
         }
     }
@@ -133,13 +142,13 @@ int Journal::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }
