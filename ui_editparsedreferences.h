@@ -15,9 +15,11 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,37 +27,52 @@ QT_BEGIN_NAMESPACE
 class Ui_EditParsedReferences
 {
 public:
+    QGridLayout *gridLayout;
     QDialogButtonBox *buttonBox;
-    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLabel *label_2;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
 
     void setupUi(QDialog *EditParsedReferences)
     {
         if (EditParsedReferences->objectName().isEmpty())
             EditParsedReferences->setObjectName(QStringLiteral("EditParsedReferences"));
         EditParsedReferences->resize(668, 640);
+        gridLayout = new QGridLayout(EditParsedReferences);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         buttonBox = new QDialogButtonBox(EditParsedReferences);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(470, 600, 176, 27));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        layoutWidget = new QWidget(EditParsedReferences);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 600, 104, 19));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
+
+        gridLayout->addWidget(buttonBox, 1, 2, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(layoutWidget);
+        label = new QLabel(EditParsedReferences);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout->addWidget(label);
 
-        label_2 = new QLabel(layoutWidget);
+        label_2 = new QLabel(EditParsedReferences);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout->addWidget(label_2);
+
+
+        gridLayout->addLayout(horizontalLayout, 1, 0, 1, 1);
+
+        scrollArea = new QScrollArea(EditParsedReferences);
+        scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 648, 587));
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        gridLayout->addWidget(scrollArea, 0, 0, 1, 3);
 
 
         retranslateUi(EditParsedReferences);

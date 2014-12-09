@@ -87,7 +87,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_toolButton_4_clicked(); break;
         case 3: _t->on_toolButton_3_clicked(); break;
         case 4: _t->on_toolButton_5_clicked(); break;
-        case 5: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }

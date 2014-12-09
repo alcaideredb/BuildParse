@@ -13,10 +13,13 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTableView>
@@ -30,66 +33,127 @@ class Ui_ViewParsedReferences
 public:
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
+    QLineEdit *lineEdit;
     QLabel *label;
+    QTableView *tableView_2;
+    QLabel *label_2;
+    QPushButton *pushButton;
+    QTableView *tableView;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label_4;
+    QComboBox *comboBox;
+    QLabel *label_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents_3;
-    QLabel *label_3;
-    QTableView *tableView;
-    QLabel *label_2;
     QTextBrowser *textBrowser;
-    QPushButton *pushButton;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_5;
+    QComboBox *comboBox_2;
 
     void setupUi(QDialog *ViewParsedReferences)
     {
         if (ViewParsedReferences->objectName().isEmpty())
             ViewParsedReferences->setObjectName(QStringLiteral("ViewParsedReferences"));
-        ViewParsedReferences->resize(728, 640);
+        ViewParsedReferences->resize(734, 782);
         gridLayout_2 = new QGridLayout(ViewParsedReferences);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        lineEdit = new QLineEdit(ViewParsedReferences);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+
+        gridLayout->addWidget(lineEdit, 2, 0, 1, 5);
+
         label = new QLabel(ViewParsedReferences);
         label->setObjectName(QStringLiteral("label"));
 
-        gridLayout->addWidget(label, 0, 1, 1, 1);
+        gridLayout->addWidget(label, 1, 0, 1, 2);
 
-        scrollArea = new QScrollArea(ViewParsedReferences);
-        scrollArea->setObjectName(QStringLiteral("scrollArea"));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents_3 = new QWidget();
-        scrollAreaWidgetContents_3->setObjectName(QStringLiteral("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 349, 277));
-        scrollArea->setWidget(scrollAreaWidgetContents_3);
+        tableView_2 = new QTableView(ViewParsedReferences);
+        tableView_2->setObjectName(QStringLiteral("tableView_2"));
+        tableView_2->setMaximumSize(QSize(16777215, 100));
 
-        gridLayout->addWidget(scrollArea, 2, 0, 1, 1);
-
-        label_3 = new QLabel(ViewParsedReferences);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        gridLayout->addWidget(label_3, 3, 0, 1, 1);
-
-        tableView = new QTableView(ViewParsedReferences);
-        tableView->setObjectName(QStringLiteral("tableView"));
-
-        gridLayout->addWidget(tableView, 1, 0, 1, 1);
+        gridLayout->addWidget(tableView_2, 3, 0, 1, 5);
 
         label_2 = new QLabel(ViewParsedReferences);
         label_2->setObjectName(QStringLiteral("label_2"));
 
-        gridLayout->addWidget(label_2, 0, 0, 1, 1);
-
-        textBrowser = new QTextBrowser(ViewParsedReferences);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
-
-        gridLayout->addWidget(textBrowser, 1, 1, 2, 1);
+        gridLayout->addWidget(label_2, 0, 0, 1, 2);
 
         pushButton = new QPushButton(ViewParsedReferences);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
-        gridLayout->addWidget(pushButton, 3, 1, 1, 1);
+        gridLayout->addWidget(pushButton, 7, 2, 1, 2);
+
+        tableView = new QTableView(ViewParsedReferences);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setMaximumSize(QSize(400, 16777215));
+
+        gridLayout->addWidget(tableView, 5, 0, 1, 1);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        label_4 = new QLabel(ViewParsedReferences);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        horizontalLayout_4->addWidget(label_4);
+
+        comboBox = new QComboBox(ViewParsedReferences);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setMaximumSize(QSize(100, 16777215));
+
+        horizontalLayout_4->addWidget(comboBox, 0, Qt::AlignLeft);
 
 
-        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
+        gridLayout->addLayout(horizontalLayout_4, 4, 0, 1, 1);
+
+        label_3 = new QLabel(ViewParsedReferences);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        QFont font;
+        font.setPointSize(14);
+        label_3->setFont(font);
+
+        gridLayout->addWidget(label_3, 7, 0, 1, 1);
+
+        scrollArea = new QScrollArea(ViewParsedReferences);
+        scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setMaximumSize(QSize(400, 16777215));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName(QStringLiteral("scrollAreaWidgetContents_3"));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 398, 249));
+        scrollArea->setWidget(scrollAreaWidgetContents_3);
+
+        gridLayout->addWidget(scrollArea, 6, 0, 1, 1);
+
+        textBrowser = new QTextBrowser(ViewParsedReferences);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+
+        gridLayout->addWidget(textBrowser, 5, 1, 2, 4);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        label_5 = new QLabel(ViewParsedReferences);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy);
+
+        horizontalLayout_3->addWidget(label_5);
+
+        comboBox_2 = new QComboBox(ViewParsedReferences);
+        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        comboBox_2->setMaximumSize(QSize(100, 16777215));
+
+        horizontalLayout_3->addWidget(comboBox_2);
+
+
+        gridLayout->addLayout(horizontalLayout_3, 4, 1, 1, 4);
+
+
+        gridLayout_2->addLayout(gridLayout, 0, 1, 1, 1);
 
 
         retranslateUi(ViewParsedReferences);
@@ -100,10 +164,12 @@ public:
     void retranslateUi(QDialog *ViewParsedReferences)
     {
         ViewParsedReferences->setWindowTitle(QApplication::translate("ViewParsedReferences", "View Parsed References", 0));
-        label->setText(QApplication::translate("ViewParsedReferences", "Output: ", 0));
-        label_3->setText(QApplication::translate("ViewParsedReferences", "No. Of Errors: 0", 0));
+        label->setText(QApplication::translate("ViewParsedReferences", "Journal:", 0));
         label_2->setText(QApplication::translate("ViewParsedReferences", "Parsed References:", 0));
         pushButton->setText(QApplication::translate("ViewParsedReferences", "Export As AGM", 0));
+        label_4->setText(QApplication::translate("ViewParsedReferences", "Volume: ", 0));
+        label_3->setText(QApplication::translate("ViewParsedReferences", "No. Of Errors: 0", 0));
+        label_5->setText(QApplication::translate("ViewParsedReferences", "Issue: ", 0));
     } // retranslateUi
 
 };

@@ -20,8 +20,11 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QWidget>
 #include <QtWidgets/QWizard>
 #include <QtWidgets/QWizardPage>
 
@@ -56,12 +59,34 @@ public:
     QComboBox *comboBox_2;
     QTableView *tableView_2;
     QLabel *label_5;
+    QWizardPage *wizardPage;
+    QGridLayout *gridLayout_5;
+    QTextEdit *textEdit;
+    QLabel *label_10;
+    QPushButton *pushButton_3;
+    QLineEdit *lineEdit_3;
+    QPushButton *pushButton_2;
+    QLabel *label_9;
+    QWizardPage *wizardPage_2;
+    QGridLayout *gridLayout_6;
+    QPushButton *pushButton_4;
+    QLabel *label_11;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QLabel *label_12;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_13;
+    QLabel *label_14;
+    QTextEdit *textEdit_2;
 
     void setupUi(QWizard *parseWizard)
     {
         if (parseWizard->objectName().isEmpty())
             parseWizard->setObjectName(QStringLiteral("parseWizard"));
         parseWizard->resize(799, 442);
+        QFont font;
+        font.setPointSize(11);
+        parseWizard->setFont(font);
         wizardPage1 = new QWizardPage();
         wizardPage1->setObjectName(QStringLiteral("wizardPage1"));
         gridLayout = new QGridLayout(wizardPage1);
@@ -82,9 +107,9 @@ public:
 
         label_3 = new QLabel(wizardPage1);
         label_3->setObjectName(QStringLiteral("label_3"));
-        QFont font;
-        font.setPointSize(14);
-        label_3->setFont(font);
+        QFont font1;
+        font1.setPointSize(14);
+        label_3->setFont(font1);
 
         gridLayout->addWidget(label_3, 0, 1, 1, 1);
 
@@ -165,7 +190,7 @@ public:
         comboBox = new QComboBox(wizardPage3);
         comboBox->setObjectName(QStringLiteral("comboBox"));
 
-        horizontalLayout_5->addWidget(comboBox, 0, Qt::AlignLeft);
+        horizontalLayout_5->addWidget(comboBox);
 
         label_8 = new QLabel(wizardPage3);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -176,7 +201,7 @@ public:
         comboBox_2 = new QComboBox(wizardPage3);
         comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
 
-        horizontalLayout_5->addWidget(comboBox_2, 0, Qt::AlignLeft);
+        horizontalLayout_5->addWidget(comboBox_2);
 
 
         gridLayout_3->addLayout(horizontalLayout_5, 8, 0, 2, 1);
@@ -192,9 +217,109 @@ public:
         gridLayout_3->addWidget(label_5, 4, 0, 1, 1);
 
         parseWizard->addPage(wizardPage3);
-        lineEdit_2->raise();
-        tableView_2->raise();
-        label_5->raise();
+        wizardPage = new QWizardPage();
+        wizardPage->setObjectName(QStringLiteral("wizardPage"));
+        gridLayout_5 = new QGridLayout(wizardPage);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        textEdit = new QTextEdit(wizardPage);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+
+        gridLayout_5->addWidget(textEdit, 3, 0, 1, 5);
+
+        label_10 = new QLabel(wizardPage);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        gridLayout_5->addWidget(label_10, 2, 0, 1, 1);
+
+        pushButton_3 = new QPushButton(wizardPage);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+
+        gridLayout_5->addWidget(pushButton_3, 4, 0, 1, 1);
+
+        lineEdit_3 = new QLineEdit(wizardPage);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setMaximumSize(QSize(250, 16777215));
+
+        gridLayout_5->addWidget(lineEdit_3, 2, 4, 1, 1);
+
+        pushButton_2 = new QPushButton(wizardPage);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        gridLayout_5->addWidget(pushButton_2, 2, 3, 1, 1);
+
+        label_9 = new QLabel(wizardPage);
+        label_9->setObjectName(QStringLiteral("label_9"));
+
+        gridLayout_5->addWidget(label_9, 2, 2, 1, 1, Qt::AlignRight);
+
+        parseWizard->addPage(wizardPage);
+        label_10->raise();
+        pushButton_3->raise();
+        lineEdit_3->raise();
+        pushButton_2->raise();
+        label_9->raise();
+        textEdit->raise();
+        wizardPage_2 = new QWizardPage();
+        wizardPage_2->setObjectName(QStringLiteral("wizardPage_2"));
+        gridLayout_6 = new QGridLayout(wizardPage_2);
+        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
+        pushButton_4 = new QPushButton(wizardPage_2);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setFont(font);
+
+        gridLayout_6->addWidget(pushButton_4, 2, 0, 1, 1);
+
+        label_11 = new QLabel(wizardPage_2);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setFont(font);
+
+        gridLayout_6->addWidget(label_11, 0, 0, 1, 1);
+
+        scrollArea = new QScrollArea(wizardPage_2);
+        scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setMaximumSize(QSize(150, 16777215));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 148, 270));
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        gridLayout_6->addWidget(scrollArea, 1, 0, 1, 1);
+
+        label_12 = new QLabel(wizardPage_2);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setFont(font);
+
+        gridLayout_6->addWidget(label_12, 0, 4, 1, 1);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        label_13 = new QLabel(wizardPage_2);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setMaximumSize(QSize(60, 16777215));
+        QFont font2;
+        font2.setPointSize(15);
+        label_13->setFont(font2);
+
+        horizontalLayout_3->addWidget(label_13);
+
+        label_14 = new QLabel(wizardPage_2);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        QFont font3;
+        font3.setPointSize(13);
+        label_14->setFont(font3);
+
+        horizontalLayout_3->addWidget(label_14);
+
+
+        gridLayout_6->addLayout(horizontalLayout_3, 3, 0, 1, 1);
+
+        textEdit_2 = new QTextEdit(wizardPage_2);
+        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+
+        gridLayout_6->addWidget(textEdit_2, 1, 1, 3, 4);
+
+        parseWizard->addPage(wizardPage_2);
 
         retranslateUi(parseWizard);
 
@@ -213,6 +338,15 @@ public:
         label_7->setText(QApplication::translate("parseWizard", "Volume: ", 0));
         label_8->setText(QApplication::translate("parseWizard", "Issue:", 0));
         label_5->setText(QApplication::translate("parseWizard", "Journal:", 0));
+        label_10->setText(QApplication::translate("parseWizard", "Parse Data:", 0));
+        pushButton_3->setText(QApplication::translate("parseWizard", "Clear", 0));
+        pushButton_2->setText(QApplication::translate("parseWizard", "File", 0));
+        label_9->setText(QApplication::translate("parseWizard", "or upload file", 0));
+        pushButton_4->setText(QApplication::translate("parseWizard", "Edit Parsed Citation", 0));
+        label_11->setText(QApplication::translate("parseWizard", "Reference:", 0));
+        label_12->setText(QApplication::translate("parseWizard", "Data:", 0));
+        label_13->setText(QApplication::translate("parseWizard", "Errors: ", 0));
+        label_14->setText(QApplication::translate("parseWizard", "0", 0));
     } // retranslateUi
 
 };

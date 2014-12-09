@@ -18,7 +18,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -41,7 +40,6 @@ public:
     QToolButton *toolButton;
     QSpacerItem *horizontalSpacer;
     QToolButton *toolButton_5;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -96,12 +94,7 @@ public:
         toolButton_5 = new QToolButton(centralWidget);
         toolButton_5->setObjectName(QStringLiteral("toolButton_5"));
 
-        gridLayout->addWidget(toolButton_5, 1, 2, 1, 1);
-
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        gridLayout->addWidget(pushButton, 2, 0, 1, 1);
+        gridLayout->addWidget(toolButton_5, 1, 2, 1, 1, Qt::AlignHCenter|Qt::AlignVCenter);
 
 
         horizontalLayout->addLayout(gridLayout);
@@ -131,7 +124,6 @@ public:
         toolButton_4->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton_5->setText(QApplication::translate("MainWindow", "...", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
         mainToolBar->setWindowTitle(QApplication::translate("MainWindow", "Citation Parsing Tool", 0));
     } // retranslateUi
 
