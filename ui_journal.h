@@ -16,6 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableView>
@@ -28,23 +29,23 @@ class Ui_Journal
 {
 public:
     QGridLayout *gridLayout;
-    QLineEdit *lineEdit;
-    QVBoxLayout *verticalLayout;
-    QTableView *tableView;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_4;
     QToolButton *toolButton;
     QToolButton *toolButton_3;
     QToolButton *toolButton_2;
     QSpacerItem *verticalSpacer;
+    QLineEdit *lineEdit;
     QGridLayout *gridLayout_2;
-    QTableView *tableView_2;
-    QVBoxLayout *verticalLayout_2;
     QToolButton *toolButton_5;
-    QToolButton *toolButton_4;
-    QToolButton *toolButton_6;
     QToolButton *toolButton_7;
+    QToolButton *toolButton_6;
+    QToolButton *toolButton_4;
     QTableView *tableView_3;
+    QTableView *tableView_2;
+    QVBoxLayout *verticalLayout;
+    QTableView *tableView;
+    QLabel *label;
 
     void setupUi(QDialog *Journal)
     {
@@ -53,21 +54,6 @@ public:
         Journal->resize(945, 459);
         gridLayout = new QGridLayout(Journal);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        lineEdit = new QLineEdit(Journal);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-
-        gridLayout->addWidget(lineEdit, 0, 2, 1, 1);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        tableView = new QTableView(Journal);
-        tableView->setObjectName(QStringLiteral("tableView"));
-
-        verticalLayout->addWidget(tableView);
-
-
-        gridLayout->addLayout(verticalLayout, 2, 2, 1, 1);
-
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_4 = new QVBoxLayout();
@@ -97,47 +83,62 @@ public:
 
         gridLayout->addLayout(verticalLayout_3, 1, 0, 2, 1);
 
+        lineEdit = new QLineEdit(Journal);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+
+        gridLayout->addWidget(lineEdit, 0, 2, 1, 1);
+
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        tableView_2 = new QTableView(Journal);
-        tableView_2->setObjectName(QStringLiteral("tableView_2"));
-        tableView_2->setMaximumSize(QSize(150, 300));
-
-        gridLayout_2->addWidget(tableView_2, 0, 1, 1, 1);
-
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         toolButton_5 = new QToolButton(Journal);
         toolButton_5->setObjectName(QStringLiteral("toolButton_5"));
 
-        verticalLayout_2->addWidget(toolButton_5);
-
-        toolButton_4 = new QToolButton(Journal);
-        toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
-
-        verticalLayout_2->addWidget(toolButton_4);
-
-        toolButton_6 = new QToolButton(Journal);
-        toolButton_6->setObjectName(QStringLiteral("toolButton_6"));
-
-        verticalLayout_2->addWidget(toolButton_6);
+        gridLayout_2->addWidget(toolButton_5, 1, 1, 1, 1);
 
         toolButton_7 = new QToolButton(Journal);
         toolButton_7->setObjectName(QStringLiteral("toolButton_7"));
 
-        verticalLayout_2->addWidget(toolButton_7);
+        gridLayout_2->addWidget(toolButton_7, 3, 2, 1, 1);
 
+        toolButton_6 = new QToolButton(Journal);
+        toolButton_6->setObjectName(QStringLiteral("toolButton_6"));
 
-        gridLayout_2->addLayout(verticalLayout_2, 0, 2, 1, 1);
+        gridLayout_2->addWidget(toolButton_6, 3, 1, 1, 1);
+
+        toolButton_4 = new QToolButton(Journal);
+        toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
+
+        gridLayout_2->addWidget(toolButton_4, 1, 2, 1, 1);
 
         tableView_3 = new QTableView(Journal);
         tableView_3->setObjectName(QStringLiteral("tableView_3"));
-        tableView_3->setMaximumSize(QSize(300, 300));
+        tableView_3->setMaximumSize(QSize(2000, 300));
 
-        gridLayout_2->addWidget(tableView_3, 2, 1, 1, 2);
+        gridLayout_2->addWidget(tableView_3, 2, 0, 1, 3);
+
+        tableView_2 = new QTableView(Journal);
+        tableView_2->setObjectName(QStringLiteral("tableView_2"));
+        tableView_2->setMaximumSize(QSize(2000, 300));
+
+        gridLayout_2->addWidget(tableView_2, 0, 0, 1, 3);
 
 
         gridLayout->addLayout(gridLayout_2, 2, 3, 1, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        tableView = new QTableView(Journal);
+        tableView->setObjectName(QStringLiteral("tableView"));
+
+        verticalLayout->addWidget(tableView);
+
+
+        gridLayout->addLayout(verticalLayout, 2, 2, 1, 1);
+
+        label = new QLabel(Journal);
+        label->setObjectName(QStringLiteral("label"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
 
 
         retranslateUi(Journal);
@@ -152,9 +153,10 @@ public:
         toolButton_3->setText(QApplication::translate("Journal", "Delete Journal", 0));
         toolButton_2->setText(QApplication::translate("Journal", "Edit Journal", 0));
         toolButton_5->setText(QApplication::translate("Journal", "Add Volume", 0));
-        toolButton_4->setText(QApplication::translate("Journal", "Delete Volume", 0));
-        toolButton_6->setText(QApplication::translate("Journal", "Add Issue", 0));
         toolButton_7->setText(QApplication::translate("Journal", "Delete Issue", 0));
+        toolButton_6->setText(QApplication::translate("Journal", "Add Issue", 0));
+        toolButton_4->setText(QApplication::translate("Journal", "Delete Volume", 0));
+        label->setText(QApplication::translate("Journal", "Journal:", 0));
     } // retranslateUi
 
 };

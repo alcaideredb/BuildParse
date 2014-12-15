@@ -52,13 +52,14 @@ public:
 
         spinBox = new QSpinBox(addVolume);
         spinBox->setObjectName(QStringLiteral("spinBox"));
+        spinBox->setMinimum(1);
 
         gridLayout->addWidget(spinBox, 1, 2, 1, 1);
 
         label_2 = new QLabel(addVolume);
         label_2->setObjectName(QStringLiteral("label_2"));
         QFont font;
-        font.setPointSize(18);
+        font.setPointSize(16);
         label_2->setFont(font);
 
         gridLayout->addWidget(label_2, 0, 2, 1, 1);
