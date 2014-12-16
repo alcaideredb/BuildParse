@@ -281,7 +281,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 148, 270));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 16, 16));
         scrollArea->setWidget(scrollAreaWidgetContents);
 
         gridLayout_6->addWidget(scrollArea, 1, 0, 1, 1);
