@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
@@ -26,11 +25,9 @@ class Ui_parsers
 {
 public:
     QGridLayout *gridLayout;
-    QPushButton *pushButton_3;
-    QDialogButtonBox *buttonBox;
+    QPushButton *addParser;
     QTableView *tableView;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *delParser;
 
     void setupUi(QDialog *parsers)
     {
@@ -39,47 +36,32 @@ public:
         parsers->resize(640, 480);
         gridLayout = new QGridLayout(parsers);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        pushButton_3 = new QPushButton(parsers);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        addParser = new QPushButton(parsers);
+        addParser->setObjectName(QStringLiteral("addParser"));
 
-        gridLayout->addWidget(pushButton_3, 1, 1, 1, 1, Qt::AlignRight);
-
-        buttonBox = new QDialogButtonBox(parsers);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-
-        gridLayout->addWidget(buttonBox, 2, 3, 1, 1);
+        gridLayout->addWidget(addParser, 1, 0, 1, 1);
 
         tableView = new QTableView(parsers);
         tableView->setObjectName(QStringLiteral("tableView"));
 
         gridLayout->addWidget(tableView, 0, 0, 1, 4);
 
-        pushButton = new QPushButton(parsers);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        delParser = new QPushButton(parsers);
+        delParser->setObjectName(QStringLiteral("delParser"));
 
-        gridLayout->addWidget(pushButton, 1, 0, 1, 1);
-
-        pushButton_2 = new QPushButton(parsers);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-
-        gridLayout->addWidget(pushButton_2, 1, 2, 1, 1, Qt::AlignRight);
+        gridLayout->addWidget(delParser, 1, 1, 1, 1);
 
 
         retranslateUi(parsers);
-        QObject::connect(buttonBox, SIGNAL(accepted()), parsers, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), parsers, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(parsers);
     } // setupUi
 
     void retranslateUi(QDialog *parsers)
     {
-        parsers->setWindowTitle(QApplication::translate("parsers", "Dialog", 0));
-        pushButton_3->setText(QApplication::translate("parsers", "Set Default Parser", 0));
-        pushButton->setText(QApplication::translate("parsers", "Add Parser", 0));
-        pushButton_2->setText(QApplication::translate("parsers", "Delete Parser", 0));
+        parsers->setWindowTitle(QApplication::translate("parsers", "Parsers", 0));
+        addParser->setText(QApplication::translate("parsers", "Add Parser", 0));
+        delParser->setText(QApplication::translate("parsers", "Delete Parser", 0));
     } // retranslateUi
 
 };

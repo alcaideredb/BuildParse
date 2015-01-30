@@ -34,9 +34,10 @@ public:
     {
         if (AddJournal->objectName().isEmpty())
             AddJournal->setObjectName(QStringLiteral("AddJournal"));
-        AddJournal->resize(676, 356);
+        AddJournal->resize(676, 180);
         gridLayout = new QGridLayout(AddJournal);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setVerticalSpacing(1);
         label = new QLabel(AddJournal);
         label->setObjectName(QStringLiteral("label"));
 
@@ -64,7 +65,7 @@ public:
 
     void retranslateUi(QDialog *AddJournal)
     {
-        AddJournal->setWindowTitle(QApplication::translate("AddJournal", "Dialog", 0));
+        AddJournal->setWindowTitle(QApplication::translate("AddJournal", "Add Journal", 0));
         label->setText(QApplication::translate("AddJournal", "Journal Name: ", 0));
     } // retranslateUi
 

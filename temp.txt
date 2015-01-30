@@ -1,3 +1,53 @@
-RASKIN, J. 1997. Looking for a humane interface: Will computers ever become easy to use? Communications of the ACM, 40, 2, 98-101.
-Raskin, J. (1997, February). Looking for a humane interface: Will computers ever become  easy to use? Communications of the ACM, 40(2), 98-101.
-[4]  J. Raskin, "Looking for a humane interface: Will computers ever become easy to use?" Communications of the ACM, vol. 40, no. 2, pp. 98-101, Feb. 1997.
+Andrieu, C., Doucet, A., & Punskaya, E. (2001). Sequential Monte Carlo methods for optimal filtering. In A
+Doucet, N. de Freitas, & N. J. Gordon (Eds.), Sequential Monte Carlo methods in practice. Berlin: Springer-
+Verlag.
+Applegate, D., & Kannan, R. (1991). Sampling and integration of near log-concave functions. In Proceedings of
+the Twenty Third Annual ACM Symposium on Theory of Computing (pp. 156–163).
+Bar-Yossef, Z., Berg, A., Chien, S., Fakcharoenphol, J., & Weitz, D. (2000). Approximating aggregate queries
+about web pages via random walks. In International Conference on Very Large Databases (pp. 535–544).
+Barber, D., & Williams, C. K. I. (1997). Gaussian processes for Bayesian classification via hybrid Monte Carlo.
+In M. C. Mozer, M. I. Jordan, & T. Petsche (Eds.), Advances in neural information processing systems 9
+(pp. 340–346). Cambridge, MA: MIT Press.
+Baum, L. E., Petrie, T., Soules, G., & Weiss, N. (1970). A maximization technique occurring in the statistical
+analysis of probabilistic functions of Markov chains. Annals of Mathematical Statistics, 41, 164–171.
+Baxter, R. J. (1982). Exactly solved models in statistical mechanics. San Diego, CA: Academic Press.
+Beichl, I., & Sullivan, F. (2000). The Metropolis algorithm. Computing in Science & Engineering, 2:1, 65–69.
+Bergman, N. (1999). Recursive Bayesian estimation: Navigation and tracking applications. Ph.D. Thesis, Depart-
+ment of Electrical Engineering, Link ̈ oping University, Sweden.
+Berners-Lee, T., Cailliau, R., Luotonen, A., Nielsen, H. F., & Secret, A. (1994). The World-Wide Web. Commu-
+nications of the ACM, 10:4, 49–63.
+Besag, J., Green, P. J., Hidgon, D., & Mengersen, K. (1995). Bayesian computation and stochastic systems.
+Statistical Science, 10:1, 3–66.
+Bielza, C., M ̈ uller, P., & Rios Insua, D. (1999). Decision Analysis by Augmented Probability Simulation,
+Management Science, 45:7, 995–1007.
+Brooks, S. P. (1998). Markov chain Monte Carlo method and its application. The Statistician, 47:1, 69–100.
+Browne, W. J., & Draper, D. (2000). Implementation and performance issues in the Bayesian and likelihood fitting
+of multilevel models. Computational Statistics, 15, 391–420.
+Bucher, C. G. (1988). Adaptive sampling—An iterative fast Monte Carlo procedure. Structural Safety, 5, 119–126.
+Bui, H. H., Venkatesh, S., & West, G. (1999). On the recognition of abstract Markov policies. In National
+Conference on Artificial Intelligence (AAAI-2000).
+Carlin, B. P., & Chib, S. (1995). Bayesian Model choice via MCMC. Journal of the Royal Statistical Society Series
+B, 57, 473–484.
+Carter, C. K., & Kohn, R. (1994). On Gibbs sampling for state space models. Biometrika, 81:3, 541–553.
+Casella, G., & Robert, C. P. (1996). Rao-Blackwellisation of sampling schemes. Biometrika, 83:1, 81–94.
+Casella, G., Mengersen, K. L., Robert, C. P., & Titterington, D. M. (1999). Perfect slice samplers for mixtures of
+distributions. Technical Report BU-1453-M, Department of Biometrics, Cornell University.
+Celeux, G., & Diebolt, J. (1985). The SEM algorithm: A probabilistic teacher algorithm derived from the EM
+algorithm for the mixture problem. Computational Statistics Quarterly, 2, 73–82.
+Celeux, G., & Diebolt, J. (1992). A stochastic approximation type EM algorithm for the mixture problem. Stochas-
+tics and Stochastics Reports, 41, 127–146.
+Chen, M. H., Shao, Q. M., & Ibrahim, J. G. (Eds.) (2001). Monte Carlo methods for Bayesian computation. Berlin:
+Springer-Verlag.
+Cheng, J., & Druzdzel, M. J. (2000). AIS-BN: An adaptive importance sampling algorithm for evidential reasoning
+in large bayesian networks. Journal of Artificial Intelligence Research, 13, 155–188.
+Chenney, S., & Forsyth, D. A. (2000). Sampling plausible solutions to multi-body constraint problems. SIGGRAPH
+(pp. 219–228).
+Clark, E., & Quinn, A. (1999). A data-driven Bayesian sampling scheme for unsupervised image segmentation.
+In IEEE International Conference on Acoustics, Speech, and Signal Processing, Arizona (Vol. 6, pp. 3497–
+3500).
+Damien, P., Wakefield, J., & Walker, S. (1999). Gibbs sampling for Bayesian non-conjugate and hierarchical
+models by auxiliary variables. Journal of the Royal Statistical Society B, 61:2, 331–344.
+de Freitas, N., Højen-Sørensen, P., Jordan, M. I., & Russell, S. (2001). Variational MCMC. In J. Breese & D.
+Koller (Eds.), Uncertainty in artificial intelligence (pp. 120–127). San Matio, CA: Morgan Kaufmann.
+de Freitas, N., Niranjan, M., Gee, A. H., & Doucet, A. (2000). Sequential Monte Carlo methods to train neural
+network models. Neural Computation, 12:4, 955–993.

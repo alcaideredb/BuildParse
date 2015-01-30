@@ -16,10 +16,13 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,69 +30,121 @@ class Ui_addIssue
 {
 public:
     QGridLayout *gridLayout;
-    QDialogButtonBox *buttonBox;
-    QLabel *label_2;
-    QComboBox *comboBox;
-    QSpinBox *spinBox_2;
     QSpinBox *spinBox;
-    QLabel *label;
-    QLabel *label_3;
-    QLabel *label_4;
+    QDialogButtonBox *buttonBox;
+    QLabel *yearLabel;
+    QLabel *issueNumLabel;
+    QLabel *monthLabel;
+    QSpinBox *spinBox_2;
+    QComboBox *comboBox;
+    QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *journalNameLabel;
+    QLabel *volumeLabel;
+    QFrame *line;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_3;
 
     void setupUi(QDialog *addIssue)
     {
         if (addIssue->objectName().isEmpty())
             addIssue->setObjectName(QStringLiteral("addIssue"));
-        addIssue->resize(792, 304);
+        addIssue->resize(617, 300);
+        addIssue->setMinimumSize(QSize(500, 300));
+        addIssue->setMaximumSize(QSize(900, 500));
         gridLayout = new QGridLayout(addIssue);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        spinBox = new QSpinBox(addIssue);
+        spinBox->setObjectName(QStringLiteral("spinBox"));
+        spinBox->setMinimum(1);
+
+        gridLayout->addWidget(spinBox, 4, 2, 1, 1);
+
         buttonBox = new QDialogButtonBox(addIssue);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
-        gridLayout->addWidget(buttonBox, 4, 2, 1, 1);
+        gridLayout->addWidget(buttonBox, 9, 2, 1, 1);
 
-        label_2 = new QLabel(addIssue);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        yearLabel = new QLabel(addIssue);
+        yearLabel->setObjectName(QStringLiteral("yearLabel"));
+        QFont font;
+        font.setFamily(QStringLiteral("Trebuchet MS"));
+        yearLabel->setFont(font);
 
-        gridLayout->addWidget(label_2, 2, 0, 1, 1);
+        gridLayout->addWidget(yearLabel, 6, 0, 1, 1);
 
-        comboBox = new QComboBox(addIssue);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
+        issueNumLabel = new QLabel(addIssue);
+        issueNumLabel->setObjectName(QStringLiteral("issueNumLabel"));
+        issueNumLabel->setFont(font);
 
-        gridLayout->addWidget(comboBox, 2, 2, 1, 1);
+        gridLayout->addWidget(issueNumLabel, 4, 0, 1, 1);
+
+        monthLabel = new QLabel(addIssue);
+        monthLabel->setObjectName(QStringLiteral("monthLabel"));
+        monthLabel->setFont(font);
+
+        gridLayout->addWidget(monthLabel, 5, 0, 1, 1);
 
         spinBox_2 = new QSpinBox(addIssue);
         spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
         spinBox_2->setMinimum(1900);
         spinBox_2->setMaximum(2100);
 
-        gridLayout->addWidget(spinBox_2, 3, 2, 1, 1);
+        gridLayout->addWidget(spinBox_2, 6, 2, 1, 1);
 
-        spinBox = new QSpinBox(addIssue);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setMinimum(1);
+        comboBox = new QComboBox(addIssue);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
 
-        gridLayout->addWidget(spinBox, 1, 2, 1, 1);
+        gridLayout->addWidget(comboBox, 5, 2, 1, 1);
 
-        label = new QLabel(addIssue);
-        label->setObjectName(QStringLiteral("label"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(0);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addWidget(label, 1, 0, 1, 1);
+        verticalLayout->addItem(verticalSpacer_2);
 
-        label_3 = new QLabel(addIssue);
-        label_3->setObjectName(QStringLiteral("label_3"));
+        journalNameLabel = new QLabel(addIssue);
+        journalNameLabel->setObjectName(QStringLiteral("journalNameLabel"));
+        QFont font1;
+        font1.setPointSize(14);
+        font1.setBold(true);
+        font1.setWeight(75);
+        journalNameLabel->setFont(font1);
 
-        gridLayout->addWidget(label_3, 3, 0, 1, 1);
+        verticalLayout->addWidget(journalNameLabel);
 
-        label_4 = new QLabel(addIssue);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        QFont font;
-        font.setPointSize(14);
-        label_4->setFont(font);
+        volumeLabel = new QLabel(addIssue);
+        volumeLabel->setObjectName(QStringLiteral("volumeLabel"));
+        QFont font2;
+        font2.setPointSize(13);
+        font2.setBold(true);
+        font2.setWeight(75);
+        volumeLabel->setFont(font2);
+        volumeLabel->setMargin(1);
 
-        gridLayout->addWidget(label_4, 0, 2, 1, 1);
+        verticalLayout->addWidget(volumeLabel);
+
+        line = new QFrame(addIssue);
+        line->setObjectName(QStringLiteral("line"));
+        line->setMinimumSize(QSize(0, 15));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line, 0, Qt::AlignBottom);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+
+        gridLayout->addLayout(verticalLayout, 0, 0, 1, 3);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_3, 8, 0, 1, 3);
 
 
         retranslateUi(addIssue);
@@ -101,8 +156,10 @@ public:
 
     void retranslateUi(QDialog *addIssue)
     {
-        addIssue->setWindowTitle(QApplication::translate("addIssue", "Dialog", 0));
-        label_2->setText(QApplication::translate("addIssue", "Month:", 0));
+        addIssue->setWindowTitle(QApplication::translate("addIssue", "Add Issue", 0));
+        yearLabel->setText(QApplication::translate("addIssue", "Year:", 0));
+        issueNumLabel->setText(QApplication::translate("addIssue", "Issue Number:", 0));
+        monthLabel->setText(QApplication::translate("addIssue", "Month:", 0));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
          << QApplication::translate("addIssue", "January", 0)
@@ -118,9 +175,8 @@ public:
          << QApplication::translate("addIssue", "November", 0)
          << QApplication::translate("addIssue", "December", 0)
         );
-        label->setText(QApplication::translate("addIssue", "Issue Number:", 0));
-        label_3->setText(QApplication::translate("addIssue", "Year:", 0));
-        label_4->setText(QApplication::translate("addIssue", "Journal Name", 0));
+        journalNameLabel->setText(QApplication::translate("addIssue", "Journal Name", 0));
+        volumeLabel->setText(QApplication::translate("addIssue", "Volume", 0));
     } // retranslateUi
 
 };

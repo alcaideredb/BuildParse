@@ -32,12 +32,12 @@ public:
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout;
+    QToolButton *toolButton_3;
     QSpacerItem *horizontalSpacer_2;
     QToolButton *toolButton_2;
-    QToolButton *toolButton_3;
     QToolButton *toolButton_4;
     QSpacerItem *horizontalSpacer_3;
-    QToolButton *toolButton;
+    QToolButton *viewParseButton;
     QSpacerItem *horizontalSpacer;
     QToolButton *toolButton_5;
     QMenuBar *menuBar;
@@ -59,6 +59,11 @@ public:
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        toolButton_3 = new QToolButton(centralWidget);
+        toolButton_3->setObjectName(QStringLiteral("toolButton_3"));
+
+        gridLayout->addWidget(toolButton_3, 2, 1, 1, 1);
+
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
@@ -67,11 +72,6 @@ public:
         toolButton_2->setObjectName(QStringLiteral("toolButton_2"));
 
         gridLayout->addWidget(toolButton_2, 0, 3, 1, 1);
-
-        toolButton_3 = new QToolButton(centralWidget);
-        toolButton_3->setObjectName(QStringLiteral("toolButton_3"));
-
-        gridLayout->addWidget(toolButton_3, 2, 1, 1, 1);
 
         toolButton_4 = new QToolButton(centralWidget);
         toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
@@ -82,10 +82,10 @@ public:
 
         gridLayout->addItem(horizontalSpacer_3, 0, 2, 1, 1);
 
-        toolButton = new QToolButton(centralWidget);
-        toolButton->setObjectName(QStringLiteral("toolButton"));
+        viewParseButton = new QToolButton(centralWidget);
+        viewParseButton->setObjectName(QStringLiteral("viewParseButton"));
 
-        gridLayout->addWidget(toolButton, 0, 1, 1, 1);
+        gridLayout->addWidget(viewParseButton, 0, 1, 1, 1);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -119,10 +119,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Welcome to the Citation Parsing Tool", 0));
-        toolButton_2->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton_3->setText(QApplication::translate("MainWindow", "...", 0));
+        toolButton_2->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton_4->setText(QApplication::translate("MainWindow", "...", 0));
-        toolButton->setText(QApplication::translate("MainWindow", "...", 0));
+        viewParseButton->setText(QApplication::translate("MainWindow", "...", 0));
         toolButton_5->setText(QApplication::translate("MainWindow", "...", 0));
         mainToolBar->setWindowTitle(QApplication::translate("MainWindow", "Citation Parsing Tool", 0));
     } // retranslateUi

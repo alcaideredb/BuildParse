@@ -50,7 +50,7 @@ public:
     QComboBox *comboBox;
     QLabel *label_5;
     QComboBox *comboBox_2;
-    QPushButton *pushButton_2;
+    QPushButton *editButton;
     QPushButton *pushButton;
 
     void setupUi(QDialog *ViewParsedReferences)
@@ -58,6 +58,9 @@ public:
         if (ViewParsedReferences->objectName().isEmpty())
             ViewParsedReferences->setObjectName(QStringLiteral("ViewParsedReferences"));
         ViewParsedReferences->resize(734, 782);
+        QFont font;
+        font.setFamily(QStringLiteral("Trebuchet MS"));
+        ViewParsedReferences->setFont(font);
         gridLayout_2 = new QGridLayout(ViewParsedReferences);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout = new QGridLayout();
@@ -75,6 +78,9 @@ public:
 
         label_2 = new QLabel(ViewParsedReferences);
         label_2->setObjectName(QStringLiteral("label_2"));
+        QFont font1;
+        font1.setPointSize(14);
+        label_2->setFont(font1);
 
         gridLayout->addWidget(label_2, 0, 0, 1, 2);
 
@@ -96,9 +102,7 @@ public:
 
         label_3 = new QLabel(ViewParsedReferences);
         label_3->setObjectName(QStringLiteral("label_3"));
-        QFont font;
-        font.setPointSize(14);
-        label_3->setFont(font);
+        label_3->setFont(font1);
 
         gridLayout->addWidget(label_3, 7, 0, 1, 1);
 
@@ -108,7 +112,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QStringLiteral("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 398, 249));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 398, 242));
         scrollArea->setWidget(scrollAreaWidgetContents_3);
 
         gridLayout->addWidget(scrollArea, 6, 0, 1, 1);
@@ -161,10 +165,10 @@ public:
 
         gridLayout->addLayout(horizontalLayout_4, 4, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(ViewParsedReferences);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        editButton = new QPushButton(ViewParsedReferences);
+        editButton->setObjectName(QStringLiteral("editButton"));
 
-        gridLayout->addWidget(pushButton_2, 7, 1, 1, 1);
+        gridLayout->addWidget(editButton, 7, 1, 1, 1);
 
         pushButton = new QPushButton(ViewParsedReferences);
         pushButton->setObjectName(QStringLiteral("pushButton"));
@@ -183,14 +187,14 @@ public:
     void retranslateUi(QDialog *ViewParsedReferences)
     {
         ViewParsedReferences->setWindowTitle(QApplication::translate("ViewParsedReferences", "View Parsed References", 0));
-        label->setText(QApplication::translate("ViewParsedReferences", "Journal:", 0));
-        label_2->setText(QApplication::translate("ViewParsedReferences", "Parsed References:", 0));
-        label_3->setText(QApplication::translate("ViewParsedReferences", "No. of Errors: 0", 0));
+        label->setText(QApplication::translate("ViewParsedReferences", "Search:", 0));
+        label_2->setText(QApplication::translate("ViewParsedReferences", "Parsed References", 0));
+        label_3->setText(QApplication::translate("ViewParsedReferences", "No. of Errors: (No output selected yet!)", 0));
         label_6->setText(QApplication::translate("ViewParsedReferences", "Month: ", 0));
         label_7->setText(QApplication::translate("ViewParsedReferences", "Year: ", 0));
         label_4->setText(QApplication::translate("ViewParsedReferences", "Volume: ", 0));
         label_5->setText(QApplication::translate("ViewParsedReferences", "Issue: ", 0));
-        pushButton_2->setText(QApplication::translate("ViewParsedReferences", "Edit Current Output", 0));
+        editButton->setText(QApplication::translate("ViewParsedReferences", "Edit Current Output", 0));
         pushButton->setText(QApplication::translate("ViewParsedReferences", "Export As AGM", 0));
     } // retranslateUi
 

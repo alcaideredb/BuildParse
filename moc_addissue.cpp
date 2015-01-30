@@ -18,26 +18,26 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_addIssue_t {
+struct qt_meta_stringdata_AddIssue_t {
     QByteArrayData data[3];
     char stringdata[32];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_addIssue_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_AddIssue_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_addIssue_t qt_meta_stringdata_addIssue = {
+static const qt_meta_stringdata_AddIssue_t qt_meta_stringdata_AddIssue = {
     {
 QT_MOC_LITERAL(0, 0, 8),
 QT_MOC_LITERAL(1, 9, 21),
 QT_MOC_LITERAL(2, 31, 0)
     },
-    "addIssue\0on_buttonBox_accepted\0"
+    "AddIssue\0on_buttonBox_accepted\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_addIssue[] = {
+static const uint qt_meta_data_AddIssue[] = {
 
  // content:
        7,       // revision
@@ -59,10 +59,10 @@ static const uint qt_meta_data_addIssue[] = {
        0        // eod
 };
 
-void addIssue::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void AddIssue::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        addIssue *_t = static_cast<addIssue *>(_o);
+        AddIssue *_t = static_cast<AddIssue *>(_o);
         switch (_id) {
         case 0: _t->on_buttonBox_accepted(); break;
         default: ;
@@ -71,26 +71,26 @@ void addIssue::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     Q_UNUSED(_a);
 }
 
-const QMetaObject addIssue::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_addIssue.data,
-      qt_meta_data_addIssue,  qt_static_metacall, 0, 0}
+const QMetaObject AddIssue::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_AddIssue.data,
+      qt_meta_data_AddIssue,  qt_static_metacall, 0, 0}
 };
 
 
-const QMetaObject *addIssue::metaObject() const
+const QMetaObject *AddIssue::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *addIssue::qt_metacast(const char *_clname)
+void *AddIssue::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_addIssue.stringdata))
-        return static_cast<void*>(const_cast< addIssue*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_AddIssue.stringdata))
+        return static_cast<void*>(const_cast< AddIssue*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int addIssue::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int AddIssue::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

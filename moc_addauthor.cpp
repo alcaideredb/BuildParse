@@ -18,26 +18,26 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_addAuthor_t {
+struct qt_meta_stringdata_AddAuthor_t {
     QByteArrayData data[3];
     char stringdata[33];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_addAuthor_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_AddAuthor_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_addAuthor_t qt_meta_stringdata_addAuthor = {
+static const qt_meta_stringdata_AddAuthor_t qt_meta_stringdata_AddAuthor = {
     {
 QT_MOC_LITERAL(0, 0, 9),
 QT_MOC_LITERAL(1, 10, 21),
 QT_MOC_LITERAL(2, 32, 0)
     },
-    "addAuthor\0on_buttonBox_accepted\0"
+    "AddAuthor\0on_buttonBox_accepted\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_addAuthor[] = {
+static const uint qt_meta_data_AddAuthor[] = {
 
  // content:
        7,       // revision
@@ -59,10 +59,10 @@ static const uint qt_meta_data_addAuthor[] = {
        0        // eod
 };
 
-void addAuthor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void AddAuthor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        addAuthor *_t = static_cast<addAuthor *>(_o);
+        AddAuthor *_t = static_cast<AddAuthor *>(_o);
         switch (_id) {
         case 0: _t->on_buttonBox_accepted(); break;
         default: ;
@@ -71,26 +71,26 @@ void addAuthor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     Q_UNUSED(_a);
 }
 
-const QMetaObject addAuthor::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_addAuthor.data,
-      qt_meta_data_addAuthor,  qt_static_metacall, 0, 0}
+const QMetaObject AddAuthor::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_AddAuthor.data,
+      qt_meta_data_AddAuthor,  qt_static_metacall, 0, 0}
 };
 
 
-const QMetaObject *addAuthor::metaObject() const
+const QMetaObject *AddAuthor::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *addAuthor::qt_metacast(const char *_clname)
+void *AddAuthor::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_addAuthor.stringdata))
-        return static_cast<void*>(const_cast< addAuthor*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_AddAuthor.stringdata))
+        return static_cast<void*>(const_cast< AddAuthor*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int addAuthor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int AddAuthor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

@@ -76,7 +76,7 @@ public:
 
     void retranslateUi(QDialog *addAuthor)
     {
-        addAuthor->setWindowTitle(QApplication::translate("addAuthor", "Dialog", 0));
+        addAuthor->setWindowTitle(QApplication::translate("addAuthor", "Add Author", 0));
         label->setText(QApplication::translate("addAuthor", "Author:", 0));
         label_2->setText(QApplication::translate("addAuthor", "Affiliation:", 0));
     } // retranslateUi
